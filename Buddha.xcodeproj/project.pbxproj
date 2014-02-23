@@ -23,6 +23,11 @@
 		43A286EF18B9C63900683AFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A286CB18B9C63900683AFC /* UIKit.framework */; };
 		43A286F718B9C63900683AFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43A286F518B9C63900683AFC /* InfoPlist.strings */; };
 		43A286F918B9C63900683AFC /* BuddhaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A286F818B9C63900683AFC /* BuddhaTests.m */; };
+		43A2875318B9CBBF00683AFC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875018B9CBBF00683AFC /* MoreViewController.m */; };
+		43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875218B9CBBF00683AFC /* MorningNightWorkViewController.m */; };
+		43A2875718B9CFEA00683AFC /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875618B9CFEA00683AFC /* PlayListViewController.m */; };
+		43A2875A18B9D6D100683AFC /* ViewController11111.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875918B9D6D100683AFC /* ViewController11111.m */; };
+		43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,16 @@
 		43A286F418B9C63900683AFC /* BuddhaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BuddhaTests-Info.plist"; sourceTree = "<group>"; };
 		43A286F618B9C63900683AFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43A286F818B9C63900683AFC /* BuddhaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuddhaTests.m; sourceTree = "<group>"; };
+		43A2874F18B9CBBF00683AFC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		43A2875018B9CBBF00683AFC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		43A2875118B9CBBF00683AFC /* MorningNightWorkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorningNightWorkViewController.h; sourceTree = "<group>"; };
+		43A2875218B9CBBF00683AFC /* MorningNightWorkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorningNightWorkViewController.m; sourceTree = "<group>"; };
+		43A2875518B9CFEA00683AFC /* PlayListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListViewController.h; sourceTree = "<group>"; };
+		43A2875618B9CFEA00683AFC /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
+		43A2875818B9D6D100683AFC /* ViewController11111.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController11111.h; sourceTree = "<group>"; };
+		43A2875918B9D6D100683AFC /* ViewController11111.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController11111.m; sourceTree = "<group>"; };
+		43A2875B18B9D8DE00683AFC /* PlayListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListTableViewCell.h; sourceTree = "<group>"; };
+		43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +132,8 @@
 		43A286CD18B9C63900683AFC /* Buddha */ = {
 			isa = PBXGroup;
 			children = (
+				43A2875518B9CFEA00683AFC /* PlayListViewController.h */,
+				43A2875618B9CFEA00683AFC /* PlayListViewController.m */,
 				43A286D618B9C63900683AFC /* AppDelegate.h */,
 				43A286D718B9C63900683AFC /* AppDelegate.m */,
 				43A286D918B9C63900683AFC /* Main_iPhone.storyboard */,
@@ -125,8 +142,16 @@
 				43A286E018B9C63900683AFC /* FirstViewController.m */,
 				43A286E218B9C63900683AFC /* SecondViewController.h */,
 				43A286E318B9C63900683AFC /* SecondViewController.m */,
+				43A2874F18B9CBBF00683AFC /* MoreViewController.h */,
+				43A2875018B9CBBF00683AFC /* MoreViewController.m */,
+				43A2875118B9CBBF00683AFC /* MorningNightWorkViewController.h */,
+				43A2875218B9CBBF00683AFC /* MorningNightWorkViewController.m */,
 				43A286E518B9C63900683AFC /* Images.xcassets */,
 				43A286CE18B9C63900683AFC /* Supporting Files */,
+				43A2875818B9D6D100683AFC /* ViewController11111.h */,
+				43A2875918B9D6D100683AFC /* ViewController11111.m */,
+				43A2875B18B9D8DE00683AFC /* PlayListTableViewCell.h */,
+				43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */,
 			);
 			path = Buddha;
 			sourceTree = "<group>";
@@ -258,10 +283,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */,
 				43A286E418B9C63900683AFC /* SecondViewController.m in Sources */,
 				43A286D818B9C63900683AFC /* AppDelegate.m in Sources */,
 				43A286E118B9C63900683AFC /* FirstViewController.m in Sources */,
+				43A2875A18B9D6D100683AFC /* ViewController11111.m in Sources */,
 				43A286D418B9C63900683AFC /* main.m in Sources */,
+				43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */,
+				43A2875318B9CBBF00683AFC /* MoreViewController.m in Sources */,
+				43A2875718B9CFEA00683AFC /* PlayListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

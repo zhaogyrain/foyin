@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  MorningNightWorkViewController.m
 //  Buddha
 //
 //  Created by zhaogyrain on 14-2-23.
 //  Copyright (c) 2014年 zhaogyrain. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MorningNightWorkViewController.h"
 
-@interface FirstViewController ()
+@interface MorningNightWorkViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation MorningNightWorkViewController
 
 - (void)viewDidLoad
 {
@@ -24,10 +24,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)onPlayListButtonClicked:(id)sender {
-    NSLog(@"onPlayListButtonClicked");
 }
 
 @end

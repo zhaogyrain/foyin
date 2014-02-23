@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  MoreViewController.m
 //  Buddha
 //
 //  Created by zhaogyrain on 14-2-23.
 //  Copyright (c) 2014年 zhaogyrain. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "MoreViewController.h"
 
-@interface FirstViewController ()
+@interface MoreViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation MoreViewController
 
 - (void)viewDidLoad
 {
@@ -24,10 +24,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)onPlayListButtonClicked:(id)sender {
-    NSLog(@"onPlayListButtonClicked");
 }
 
 @end
