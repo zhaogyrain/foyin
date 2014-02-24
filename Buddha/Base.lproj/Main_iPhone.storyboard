@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--First View Controller - First-->
+        <!--First View Controller - 佛音-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
-                <viewController title="First" id="CZ4-MO-1fc" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="佛音" id="CZ4-MO-1fc" customClass="FirstViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRS-v4-CVk"/>
                         <viewControllerLayoutGuide type="bottom" id="Img-XN-Xxa"/>
@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="685" y="-1002"/>
         </scene>
-        <!--Play List View Controller-->
+        <!--Play List View Controller - 播放列表-->
         <scene sceneID="fUK-ev-YZg">
             <objects>
-                <viewController id="P9v-9r-oQO" customClass="PlayListViewController" sceneMemberID="viewController">
+                <viewController title="播放列表" id="P9v-9r-oQO" customClass="PlayListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ncS-z9-fRa"/>
                         <viewControllerLayoutGuide type="bottom" id="8OE-VB-6Gi"/>
@@ -150,10 +150,10 @@
             </objects>
             <point key="canvasLocation" x="685" y="-3"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Second View Controller - 佛经-->
         <scene sceneID="N0X-yZ-gdG">
             <objects>
-                <viewController id="YGG-2K-X3s" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController title="佛经" id="YGG-2K-X3s" customClass="SecondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fxP-cO-5Og"/>
                         <viewControllerLayoutGuide type="bottom" id="a5g-AQ-7G3"/>
@@ -226,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="1126" y="-3"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - 佛经ebook-->
         <scene sceneID="95r-9s-Nwc">
             <objects>
-                <viewController id="pCf-4g-E71" sceneMemberID="viewController">
+                <viewController title="佛经ebook" id="pCf-4g-E71" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fdw-pC-xE9"/>
                         <viewControllerLayoutGuide type="bottom" id="xou-0A-5Hw"/>
@@ -256,7 +256,7 @@
         <!--Morning Night Work View Controller - 早晚课-->
         <scene sceneID="KuE-D9-Jbq">
             <objects>
-                <viewController id="Idj-By-4w5" customClass="MorningNightWorkViewController" sceneMemberID="viewController">
+                <viewController title="早晚课" id="Idj-By-4w5" customClass="MorningNightWorkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mZe-Db-WBq"/>
                         <viewControllerLayoutGuide type="bottom" id="EIx-e9-Eda"/>
@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="693" y="1431"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar Controller - 佛经navigation-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
-                <tabBarController id="8YX-ce-x5E" sceneMemberID="viewController">
+                <tabBarController title="佛经navigation" id="8YX-ce-x5E" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
