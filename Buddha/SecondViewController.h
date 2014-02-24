@@ -10,4 +10,6 @@
 
 @interface SecondViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *booksTableView;
+
 @end
