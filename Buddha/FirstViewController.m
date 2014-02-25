@@ -31,10 +31,10 @@
     {
         NSLog(@"Error creating player: %@", error);
     }
-    self.player.delegate = self;
-    [self.player prepareToPlay];
-    self.currentTimeSlider.minimumValue = 0.0f;
-    self.currentTimeSlider.maximumValue = self.player.duration;
+    _player.delegate = self;
+    [_player prepareToPlay];
+    _currentTimeSlider.minimumValue = 0.0f;
+    _currentTimeSlider.maximumValue = self.player.duration;
 
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -60,19 +60,6 @@
     IDZTrace();
 }
 
-
-- (void)play {
-    [self.player play];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
-}
-
-- (void)pause {
-    IDZTrace();
-    [self.player pause];
-    [self stopTimer];
-    [self updateDisplay];
-}
-
 - (IBAction)onNextButtonClicked:(id)sender {
 }
 
@@ -84,8 +71,22 @@
 #pragma mark - Display Update
 - (void)updateDisplay
 {
-    NSTimeInterval currentTime = self.player.currentTime;
-    self.currentTimeSlider.value = currentTime;
+    NSTimeInterval currentTime = _player.currentTime;
+    _currentTimeSlider.value = currentTime;
+}
+
+#pragma mark - avaudioplay operation
+- (void)play {
+    // TODO: play in background
+    [_player play];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
+}
+
+- (void)pause {
+    IDZTrace();
+    [self.player pause];
+    [self stopTimer];
+    [self updateDisplay];
 }
 
 #pragma mark - Timer
