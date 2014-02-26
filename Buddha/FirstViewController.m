@@ -14,7 +14,9 @@
 
 @property (nonatomic, strong) AVAudioPlayer* player;
 @property (nonatomic, strong) NSTimer* timer;
-
+@property (nonatomic, strong) NSArray *songs;
+@property (nonatomic, assign) NSInteger playSongCount;
+@property (nonatomic, assign) NSInteger circleButtonClickCount;
 @end
 
 @implementation FirstViewController
@@ -22,21 +24,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSURL* url = [[NSBundle mainBundle] URLForResource:@"Rondo_Alla_Turka_Short" withExtension:@"aiff"];
-    NSAssert(url, @"URL is valid.");
-    NSError* error = nil;
-    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
-    if(!self.player)
-    {
-        NSLog(@"Error creating player: %@", error);
-    }
-    _player.delegate = self;
-    [_player prepareToPlay];
+    self.songs = [NSArray arrayWithObjects:@"jzl", @"sjdqnl", @"wmhxznjg", nil];
+    
+    [self changeAudioPlay];
     _currentTimeSlider.minimumValue = 0.0f;
     _currentTimeSlider.maximumValue = self.player.duration;
-
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +39,31 @@
 
 - (IBAction)onPlayListButtonClicked:(id)sender {
     NSLog(@"onPlayListButtonClicked");
+}
+
+#pragma mark -
+- (void)changeAudioPlay
+{
+    //TODO: mp3 format not constant
+    NSString *song = [_songs objectAtIndex:_playSongCount % _songs.count];
+    NSURL* url = [[NSBundle mainBundle] URLForResource:song withExtension:@"mp3"];
+    NSAssert(url, @"URL is valid.");
+    NSError* error = nil;
+    self.player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    if(!self.player)
+    {
+        NSLog(@"Error creating player: %@", error);
+    }
+    _player.delegate = self;
+    [_player prepareToPlay];
+
+}
+
+#pragma mark - method
+
+- (void)changePlaySountCount:(NSInteger)itemCount
+{
+    _playSongCount += itemCount;
 }
 
 #pragma mark - Actions
@@ -61,12 +78,27 @@
 }
 
 - (IBAction)onNextButtonClicked:(id)sender {
+    [self changePlaySountCount:1];
+    [self changeAudioPlay];
+    [self play];
+//    _player.url = [[NSBundle mainBundle] URLForResource:song withExtension:@"mp3"];
 }
 
 - (IBAction)onPreviousButtonClicked:(id)sender {
+    [self changePlaySountCount:-1];
+    [self changeAudioPlay];
+    [self play];
 }
 
 - (IBAction)onCircleButtonClicked:(id)sender {
+    _circleButtonClickCount += 1;
+    if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
+        [_circleButton setTitle:@"单曲循环" forState:UIControlStateNormal];
+    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
+        [_circleButton setTitle:@"顺序播放" forState:UIControlStateNormal];
+    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
+        [_circleButton setTitle:@"随机播放" forState:UIControlStateNormal];
+    }
 }
 #pragma mark - Display Update
 - (void)updateDisplay
@@ -77,6 +109,7 @@
 
 #pragma mark - avaudioplay operation
 - (void)play {
+    IDZTrace();
     // TODO: play in background
     [_player play];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(timerFired:) userInfo:nil repeats:YES];
@@ -106,8 +139,17 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     NSLog(@"%s successfully=%@", __PRETTY_FUNCTION__, flag ? @"YES"  : @"NO");
+    if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
+        [self changePlaySountCount:0];
+    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
+        [self changePlaySountCount:1];
+    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
+        [self changePlaySountCount:rand()];
+    }
     [self stopTimer];
     [self updateDisplay];
+    [self changeAudioPlay];
+    [self play];
 }
 
 - (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error

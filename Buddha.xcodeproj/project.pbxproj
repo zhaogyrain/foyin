@@ -29,6 +29,9 @@
 		43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */; };
 		43BD169B18BB9AB40057239A /* BooksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BD169A18BB9AB40057239A /* BooksTableViewCell.m */; };
 		43BD169E18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 43BD169D18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff */; };
+		43BD16A218BE39900057239A /* jzl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43BD169F18BE39900057239A /* jzl.mp3 */; };
+		43BD16A318BE39900057239A /* sjdqnl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43BD16A018BE39900057239A /* sjdqnl.mp3 */; };
+		43BD16A418BE39900057239A /* wmhxznjg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43BD16A118BE39900057239A /* wmhxznjg.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		43BD169918BB9AB40057239A /* BooksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewCell.h; sourceTree = "<group>"; };
 		43BD169A18BB9AB40057239A /* BooksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksTableViewCell.m; sourceTree = "<group>"; };
 		43BD169D18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Rondo_Alla_Turka_Short.aiff; sourceTree = "<group>"; };
+		43BD169F18BE39900057239A /* jzl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jzl.mp3; sourceTree = "<group>"; };
+		43BD16A018BE39900057239A /* sjdqnl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sjdqnl.mp3; sourceTree = "<group>"; };
+		43BD16A118BE39900057239A /* wmhxznjg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wmhxznjg.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,9 @@
 		43BD169C18BCD75A0057239A /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				43BD169F18BE39900057239A /* jzl.mp3 */,
+				43BD16A018BE39900057239A /* sjdqnl.mp3 */,
+				43BD16A118BE39900057239A /* wmhxznjg.mp3 */,
 				43BD169D18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff */,
 			);
 			path = resource;
@@ -275,8 +284,11 @@
 				43A286DE18B9C63900683AFC /* Main_iPad.storyboard in Resources */,
 				43A286E618B9C63900683AFC /* Images.xcassets in Resources */,
 				43A286DB18B9C63900683AFC /* Main_iPhone.storyboard in Resources */,
+				43BD16A218BE39900057239A /* jzl.mp3 in Resources */,
 				43A286D218B9C63900683AFC /* InfoPlist.strings in Resources */,
 				43BD169E18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff in Resources */,
+				43BD16A318BE39900057239A /* sjdqnl.mp3 in Resources */,
+				43BD16A418BE39900057239A /* wmhxznjg.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

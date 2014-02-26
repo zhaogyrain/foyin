@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+typedef enum {
+    PlaySongModeOrder,
+    PlaySongModeCirculateOne,
+    PlaySongModeRandom,
+} PlaySongModeType;
+
+#define kPlaySongModeCount 3
+
 @interface FirstViewController : UIViewController <AVAudioPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *previousPlayButton;
@@ -16,5 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextPlayButton;
 @property (weak, nonatomic) IBOutlet UISlider *playSoundSlider;
 @property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
+@property (weak, nonatomic) IBOutlet UIButton *circleButton;
+
+@property (assign, nonatomic) PlaySongModeType *playSongModeType;
 
 @end

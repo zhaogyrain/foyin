@@ -73,9 +73,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVS-2E-ZJm">
-                                <rect key="frame" x="241" y="473" width="40" height="30"/>
+                                <rect key="frame" x="209" y="476" width="85" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Circle">
+                                <state key="normal" title="顺序播放">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -100,6 +100,7 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
                     <navigationItem key="navigationItem" id="zRC-gA-dCk"/>
                     <connections>
+                        <outlet property="circleButton" destination="TVS-2E-ZJm" id="Dhv-uz-zfE"/>
                         <outlet property="currentTimeSlider" destination="bfC-vw-uoE" id="h1i-kN-pEe"/>
                         <outlet property="nextPlayButton" destination="mkj-Ig-Yeb" id="Ua7-Jf-uEZ"/>
                         <outlet property="playButton" destination="yxs-Vn-QWo" id="5gg-zJ-Icz"/>
