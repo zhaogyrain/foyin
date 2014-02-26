@@ -51,7 +51,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)onPlayButtonclicked:(id)sender {
+- (IBAction)onPlayOrPauseButtonclicked:(id)sender {
     if (_player.isPlaying) { // 本想根据button的selected来判断，但是当播放完一首音乐时，播放停止，而selected未更新
         [self pause];
     } else {
