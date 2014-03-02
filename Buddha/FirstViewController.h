@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "PlayListViewController.h"
 
 typedef enum {
     PlaySongModeOrder,
@@ -17,7 +18,7 @@ typedef enum {
 
 #define kPlaySongModeCount 3
 
-@interface FirstViewController : UIViewController <AVAudioPlayerDelegate>
+@interface FirstViewController : UIViewController <AVAudioPlayerDelegate, PlayListViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *previousPlayButton;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;

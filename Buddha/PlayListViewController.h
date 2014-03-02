@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PlayListViewControllerDelegate <NSObject>
+
+- (void)onTableViewCellSelected:(NSIndexPath *)indexPath;
+
+@end
+
 @interface PlayListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *songs;
 @property (weak, nonatomic) IBOutlet UITableView *songTableVIew;
+
+@property (nonatomic, weak) id<PlayListViewControllerDelegate> delegate;
 
 @end

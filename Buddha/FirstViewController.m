@@ -8,7 +8,6 @@
 
 #import "FirstViewController.h"
 #import "iToast.h"
-#import "PlayListViewController.h"
 
 #define IDZTrace() NSLog(@"%s", __PRETTY_FUNCTION__)
 
@@ -48,12 +47,14 @@
 //    [vc.songTableVIew reloadData];
 }
 
+#pragma mark
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:@"FirstViewControllerToPlayListViewController"])
 	{
         PlayListViewController *plvc = segue.destinationViewController;
         plvc.songs = [NSMutableArray arrayWithArray:self.songs];
+        [plvc setDelegate:self];
 	}
 }
 #pragma mark -
@@ -110,10 +111,10 @@
 - (IBAction)onCircleButtonClicked:(id)sender {
     _circleButtonClickCount += 1;
     NSString *strNotification;
-    if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
-        strNotification = @"单曲循环";
-    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
+     if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
         strNotification = @"顺序播放";
+    } else if(_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
+        strNotification = @"单曲循环";
     } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
         strNotification = @"随机播放";
     }
@@ -123,11 +124,22 @@
     [[[[iToast makeText:strNotification]
        setGravity:iToastGravityCenter] setDuration:iToastDurationNormal] show];
 }
+
+#pragma mark - PlayListViewControllerDelegate
+- (void)onTableViewCellSelected:(NSIndexPath *)indexPath
+{
+    _circleButtonClickCount = indexPath.row;
+    _playSongCount = _circleButtonClickCount;
+    [self changeAudioPlay];
+    [self play];
+}
+
 #pragma mark - Display Update
 - (void)updateDisplay
 {
     NSTimeInterval currentTime = _player.currentTime;
-    _currentTimeSlider.value = currentTime;
+    if (!_currentTimeSlider.isTracking)
+        _currentTimeSlider.value = currentTime;
 }
 
 #pragma mark - avaudioplay operation
@@ -162,10 +174,10 @@
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
     NSLog(@"%s successfully=%@", __PRETTY_FUNCTION__, flag ? @"YES"  : @"NO");
-    if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
-        [self changePlaySountCount:0];
-    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
+    if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
         [self changePlaySountCount:1];
+    } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
+        [self changePlaySountCount:0];
     } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
         [self changePlaySountCount:rand()];
     }
@@ -182,5 +194,10 @@
     [self updateDisplay];
 }
 
+- (IBAction)onSliderTouchUpInside:(id)sender {
+    // TODO:类似百度音乐的音乐播放时长表示
+    UISlider *slider = (UISlider *)sender;
+    _player.currentTime = slider.value;
+}
 
 @end
