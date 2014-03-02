@@ -44,14 +44,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return _songs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"PlayListTableViewCell";
     PlayListTableViewCell *cell = (PlayListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.songName.text = [NSString stringWithFormat:@"song name %d", indexPath.row];
+    cell.songName.text = [NSString stringWithFormat:@"song name %@", [_songs objectAtIndex:indexPath.row]];
     if (indexPath.row % 2 == 0) {
         cell.downLoadButton.hidden = YES;
     }

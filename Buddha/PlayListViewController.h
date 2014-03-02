@@ -10,4 +10,7 @@
 
 @interface PlayListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSMutableArray *songs;
+@property (weak, nonatomic) IBOutlet UITableView *songTableVIew;
+
 @end

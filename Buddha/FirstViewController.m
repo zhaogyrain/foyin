@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import "iToast.h"
+#import "PlayListViewController.h"
 
 #define IDZTrace() NSLog(@"%s", __PRETTY_FUNCTION__)
 
@@ -37,10 +39,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - button click action
 - (IBAction)onPlayListButtonClicked:(id)sender {
     NSLog(@"onPlayListButtonClicked");
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+//    PlayListViewController *vc = (PlayListViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PlayListViewController"];
+//    vc.songs = [NSMutableArray arrayWithArray:self.songs];
+//    [vc.songTableVIew reloadData];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"FirstViewControllerToPlayListViewController"])
+	{
+        PlayListViewController *plvc = segue.destinationViewController;
+        plvc.songs = [NSMutableArray arrayWithArray:self.songs];
+	}
+}
 #pragma mark -
 - (void)changeAudioPlay
 {
@@ -71,8 +86,10 @@
 - (IBAction)onPlayOrPauseButtonclicked:(id)sender {
     if (_player.isPlaying) { // 本想根据button的selected来判断，但是当播放完一首音乐时，播放停止，而selected未更新
         [self pause];
+        [_playButton setTitle:@"play" forState:UIControlStateNormal];
     } else {
         [self play];
+        [_playButton setTitle:@"pause" forState:UIControlStateNormal];
     }
     IDZTrace();
 }
@@ -92,13 +109,19 @@
 
 - (IBAction)onCircleButtonClicked:(id)sender {
     _circleButtonClickCount += 1;
+    NSString *strNotification;
     if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
-        [_circleButton setTitle:@"单曲循环" forState:UIControlStateNormal];
+        strNotification = @"单曲循环";
     } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
-        [_circleButton setTitle:@"顺序播放" forState:UIControlStateNormal];
+        strNotification = @"顺序播放";
     } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
-        [_circleButton setTitle:@"随机播放" forState:UIControlStateNormal];
+        strNotification = @"随机播放";
     }
+    
+    [_circleButton setTitle:strNotification forState:UIControlStateNormal];
+    //TODO: toast 类似百度的样子 好看些，
+    [[[[iToast makeText:strNotification]
+       setGravity:iToastGravityCenter] setDuration:iToastDurationNormal] show];
 }
 #pragma mark - Display Update
 - (void)updateDisplay

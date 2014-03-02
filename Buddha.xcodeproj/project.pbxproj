@@ -27,6 +27,7 @@
 		43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875218B9CBBF00683AFC /* MorningNightWorkViewController.m */; };
 		43A2875718B9CFEA00683AFC /* PlayListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875618B9CFEA00683AFC /* PlayListViewController.m */; };
 		43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */; };
+		43A4635A18C3385E00347D8E /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A4635918C3385E00347D8E /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		43BD169B18BB9AB40057239A /* BooksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BD169A18BB9AB40057239A /* BooksTableViewCell.m */; };
 		43BD169E18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 43BD169D18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff */; };
 		43BD16A218BE39900057239A /* jzl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43BD169F18BE39900057239A /* jzl.mp3 */; };
@@ -75,6 +76,8 @@
 		43A2875618B9CFEA00683AFC /* PlayListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListViewController.m; sourceTree = "<group>"; };
 		43A2875B18B9D8DE00683AFC /* PlayListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayListTableViewCell.h; sourceTree = "<group>"; };
 		43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayListTableViewCell.m; sourceTree = "<group>"; };
+		43A4635818C3385E00347D8E /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iToast.h; sourceTree = "<group>"; };
+		43A4635918C3385E00347D8E /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iToast.m; sourceTree = "<group>"; };
 		43BD169918BB9AB40057239A /* BooksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BooksTableViewCell.h; sourceTree = "<group>"; };
 		43BD169A18BB9AB40057239A /* BooksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BooksTableViewCell.m; sourceTree = "<group>"; };
 		43BD169D18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Rondo_Alla_Turka_Short.aiff; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		43A286BB18B9C63900683AFC = {
 			isa = PBXGroup;
 			children = (
+				43A4635718C3385E00347D8E /* customViews */,
 				43BD169C18BCD75A0057239A /* resource */,
 				43A286CD18B9C63900683AFC /* Buddha */,
 				43A286F218B9C63900683AFC /* BuddhaTests */,
@@ -192,6 +196,16 @@
 				43A286F518B9C63900683AFC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43A4635718C3385E00347D8E /* customViews */ = {
+			isa = PBXGroup;
+			children = (
+				43A4635818C3385E00347D8E /* iToast.h */,
+				43A4635918C3385E00347D8E /* iToast.m */,
+			);
+			name = customViews;
+			path = Buddha/customViews;
 			sourceTree = "<group>";
 		};
 		43BD169C18BCD75A0057239A /* resource */ = {
@@ -310,6 +324,7 @@
 				43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */,
 				43A286E418B9C63900683AFC /* SecondViewController.m in Sources */,
 				43A286D818B9C63900683AFC /* AppDelegate.m in Sources */,
+				43A4635A18C3385E00347D8E /* iToast.m in Sources */,
 				43A286E118B9C63900683AFC /* FirstViewController.m in Sources */,
 				43A286D418B9C63900683AFC /* main.m in Sources */,
 				43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */,
