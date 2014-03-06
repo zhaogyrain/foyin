@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		439E13F218C8C8E7006C9293 /* EbookControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439E13F118C8C8E7006C9293 /* EbookControllerView.m */; };
+		439E13F518C8C91C006C9293 /* verticalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439E13F418C8C91C006C9293 /* verticalTextView.m */; };
+		439E13F818C8C9A3006C9293 /* 佛说阿弥陀经.txt in Resources */ = {isa = PBXBuildFile; fileRef = 439E13F718C8C9A3006C9293 /* 佛说阿弥陀经.txt */; };
 		43A286C818B9C63900683AFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A286C718B9C63900683AFC /* Foundation.framework */; };
 		43A286CA18B9C63900683AFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A286C918B9C63900683AFC /* CoreGraphics.framework */; };
 		43A286CC18B9C63900683AFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43A286CB18B9C63900683AFC /* UIKit.framework */; };
@@ -46,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		439E13F018C8C8E7006C9293 /* EbookControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EbookControllerView.h; sourceTree = "<group>"; };
+		439E13F118C8C8E7006C9293 /* EbookControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EbookControllerView.m; sourceTree = "<group>"; };
+		439E13F318C8C91C006C9293 /* verticalTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = verticalTextView.h; sourceTree = "<group>"; };
+		439E13F418C8C91C006C9293 /* verticalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = verticalTextView.m; sourceTree = "<group>"; };
+		439E13F718C8C9A3006C9293 /* 佛说阿弥陀经.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "佛说阿弥陀经.txt"; sourceTree = "<group>"; };
 		43A286C418B9C63900683AFC /* Buddha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Buddha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A286C718B9C63900683AFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43A286C918B9C63900683AFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -110,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		439E13F618C8C9A3006C9293 /* eBooks */ = {
+			isa = PBXGroup;
+			children = (
+				439E13F718C8C9A3006C9293 /* 佛说阿弥陀经.txt */,
+			);
+			path = eBooks;
+			sourceTree = "<group>";
+		};
 		43A286BB18B9C63900683AFC = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				43A2875518B9CFEA00683AFC /* PlayListViewController.h */,
+				439E13F318C8C91C006C9293 /* verticalTextView.h */,
+				439E13F418C8C91C006C9293 /* verticalTextView.m */,
 				43A2875618B9CFEA00683AFC /* PlayListViewController.m */,
 				43A286D618B9C63900683AFC /* AppDelegate.h */,
 				43A286D718B9C63900683AFC /* AppDelegate.m */,
@@ -165,6 +183,8 @@
 				43A2875C18B9D8DE00683AFC /* PlayListTableViewCell.m */,
 				43BD169918BB9AB40057239A /* BooksTableViewCell.h */,
 				43BD169A18BB9AB40057239A /* BooksTableViewCell.m */,
+				439E13F018C8C8E7006C9293 /* EbookControllerView.h */,
+				439E13F118C8C8E7006C9293 /* EbookControllerView.m */,
 			);
 			path = Buddha;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 		43BD169C18BCD75A0057239A /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				439E13F618C8C9A3006C9293 /* eBooks */,
 				43BD169F18BE39900057239A /* jzl.mp3 */,
 				43BD16A018BE39900057239A /* sjdqnl.mp3 */,
 				43BD16A118BE39900057239A /* wmhxznjg.mp3 */,
@@ -298,6 +319,7 @@
 				43A286DE18B9C63900683AFC /* Main_iPad.storyboard in Resources */,
 				43A286E618B9C63900683AFC /* Images.xcassets in Resources */,
 				43A286DB18B9C63900683AFC /* Main_iPhone.storyboard in Resources */,
+				439E13F818C8C9A3006C9293 /* 佛说阿弥陀经.txt in Resources */,
 				43BD16A218BE39900057239A /* jzl.mp3 in Resources */,
 				43A286D218B9C63900683AFC /* InfoPlist.strings in Resources */,
 				43BD169E18BCD75A0057239A /* Rondo_Alla_Turka_Short.aiff in Resources */,
@@ -324,11 +346,13 @@
 				43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */,
 				43A286E418B9C63900683AFC /* SecondViewController.m in Sources */,
 				43A286D818B9C63900683AFC /* AppDelegate.m in Sources */,
+				439E13F518C8C91C006C9293 /* verticalTextView.m in Sources */,
 				43A4635A18C3385E00347D8E /* iToast.m in Sources */,
 				43A286E118B9C63900683AFC /* FirstViewController.m in Sources */,
 				43A286D418B9C63900683AFC /* main.m in Sources */,
 				43A2875D18B9D8DE00683AFC /* PlayListTableViewCell.m in Sources */,
 				43A2875318B9CBBF00683AFC /* MoreViewController.m in Sources */,
+				439E13F218C8C8E7006C9293 /* EbookControllerView.m in Sources */,
 				43A2875718B9CFEA00683AFC /* PlayListViewController.m in Sources */,
 				43BD169B18BB9AB40057239A /* BooksTableViewCell.m in Sources */,
 			);

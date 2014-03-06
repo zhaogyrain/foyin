@@ -282,10 +282,10 @@
             </objects>
             <point key="canvasLocation" x="1126" y="-3"/>
         </scene>
-        <!--View Controller - 佛经ebook-->
+        <!--Ebook Controller View - 佛经ebook-->
         <scene sceneID="95r-9s-Nwc">
             <objects>
-                <viewController title="佛经ebook" id="pCf-4g-E71" sceneMemberID="viewController">
+                <viewController title="佛经ebook" id="pCf-4g-E71" customClass="EbookControllerView" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fdw-pC-xE9"/>
                         <viewControllerLayoutGuide type="bottom" id="xou-0A-5Hw"/>
@@ -293,14 +293,6 @@
                     <view key="view" contentMode="scaleToFill" id="3S8-tc-1ad">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="佛经文本" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPV-sF-2rG">
-                                <rect key="frame" x="126" y="80" width="68" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jen-3l-2TN"/>
