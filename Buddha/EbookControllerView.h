@@ -10,4 +10,6 @@
 
 @interface EbookControllerView : UIViewController
 
+@property (nonatomic, strong) NSString *ebookTitle;
+
 @end

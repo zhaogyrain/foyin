@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "BooksTableViewCell.h"
+#import "EbookControllerView.h"
 
 @interface SecondViewController ()
 
@@ -55,6 +56,18 @@
     [cell.bookImageIcon setImage:[UIImage imageNamed:@"second"]];
     
     return cell;
+}
+
+#pragma mark
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+	if ([segue.identifier isEqualToString:@"EbookControllerView"])
+	{
+        EbookControllerView *ebookvc = segue.destinationViewController;
+        ebookvc.ebookTitle = @"佛说阿弥陀经";
+//        [plvc setDelegate:self];
+        
+	}
 }
 
 @end
