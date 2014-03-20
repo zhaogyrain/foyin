@@ -30,6 +30,24 @@
     [self changeAudioPlay];
     _currentTimeSlider.minimumValue = 0.0f;
     _currentTimeSlider.maximumValue = self.player.duration;
+    
+    // TODO: 本地存储播放状态，随机，单曲循环，顺序等
+    [_circleButton setImage:[UIImage imageNamed:@"sequential"] forState:UIControlStateNormal];
+    [_circleButton setImage:[UIImage imageNamed:@"sequential2"] forState:UIControlStateHighlighted];
+    
+    [_currentTimeSlider setThumbImage:[UIImage imageNamed:@"slider_thumb"] forState:UIControlStateNormal];
+    [_currentTimeSlider setThumbImage:[UIImage imageNamed:@"slider_thumb2"] forState:UIControlStateHighlighted];
+    UIImage *imgMin = [UIImage imageNamed:@"slider_track"];
+    UIImage *imgMax = [UIImage imageNamed:@"slider_track_bg"];
+    if ([imgMin respondsToSelector:@selector(resizableImageWithCapInsets:resizingMode:)]) {
+        imgMin = [imgMin resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10) resizingMode:UIImageResizingModeStretch];
+        imgMax = [imgMax resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10) resizingMode:UIImageResizingModeStretch];
+    } else {
+        imgMin = [imgMin stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
+        imgMax = [imgMax stretchableImageWithLeftCapWidth:10.0 topCapHeight:0.0];
+    }
+    [_currentTimeSlider setMinimumTrackImage:imgMin forState:UIControlStateNormal];
+    [_currentTimeSlider setMaximumTrackImage:imgMax forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,10 +105,12 @@
 - (IBAction)onPlayOrPauseButtonclicked:(id)sender {
     if (_player.isPlaying) { // 本想根据button的selected来判断，但是当播放完一首音乐时，播放停止，而selected未更新
         [self pause];
-        [_playButton setTitle:@"play" forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"play2"] forState:UIControlStateHighlighted];
     } else {
         [self play];
-        [_playButton setTitle:@"pause" forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"pause2"] forState:UIControlStateHighlighted];
     }
     IDZTrace();
 }
@@ -112,11 +132,17 @@
     _circleButtonClickCount += 1;
     NSString *strNotification;
      if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeOrder) {
-        strNotification = @"顺序播放";
+         [_circleButton setImage:[UIImage imageNamed:@"sequential"] forState:UIControlStateNormal];
+         [_circleButton setImage:[UIImage imageNamed:@"sequential2"] forState:UIControlStateHighlighted];
+         strNotification = @"顺序播放";
     } else if(_circleButtonClickCount % kPlaySongModeCount == PlaySongModeCirculateOne) {
-        strNotification = @"单曲循环";
+        [_circleButton setImage:[UIImage imageNamed:@"repeated"] forState:UIControlStateNormal];
+        [_circleButton setImage:[UIImage imageNamed:@"repeated2"] forState:UIControlStateHighlighted];
+         strNotification = @"单曲循环";
     } else if (_circleButtonClickCount % kPlaySongModeCount == PlaySongModeRandom) {
-        strNotification = @"随机播放";
+        [_circleButton setImage:[UIImage imageNamed:@"random"] forState:UIControlStateNormal];
+        [_circleButton setImage:[UIImage imageNamed:@"random2"] forState:UIControlStateHighlighted];
+         strNotification = @"随机播放";
     }
     
     [_circleButton setTitle:strNotification forState:UIControlStateNormal];
