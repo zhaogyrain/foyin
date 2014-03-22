@@ -26,6 +26,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UISlider *playSoundSlider;
 @property (weak, nonatomic) IBOutlet UISlider *currentTimeSlider;
 @property (weak, nonatomic) IBOutlet UIButton *circleButton;
+@property (weak, nonatomic) IBOutlet UILabel *titleLable;
 
 @property (assign, nonatomic) PlaySongModeType *playSongModeType;
 

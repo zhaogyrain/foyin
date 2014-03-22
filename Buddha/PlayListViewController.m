@@ -8,6 +8,7 @@
 
 #import "PlayListViewController.h"
 #import "PlayListTableViewCell.h"
+#import "DeviceInformation.h"
 
 @interface PlayListViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *playListTableView;
@@ -19,6 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (iPhone5) {
+        [_backgroundImage setImage:[UIImage imageNamed:@"bg_l.jpg"]];
+    } else {
+        [_backgroundImage setImage:[UIImage imageNamed:@"bg.jpg"]];        
+    }
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

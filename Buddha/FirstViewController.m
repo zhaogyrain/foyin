@@ -27,7 +27,7 @@
     [super viewDidLoad];
     self.songs = [NSArray arrayWithObjects:@"jzl", @"sjdqnl", @"wmhxznjg", nil];
     
-    [self changeAudioPlay];
+    [self changeAudioAndTitle];
     _currentTimeSlider.minimumValue = 0.0f;
     _currentTimeSlider.maximumValue = self.player.duration;
     
@@ -76,6 +76,13 @@
 	}
 }
 #pragma mark -
+
+- (void)changeAudioAndTitle
+{
+    [self changeTitle];
+    [self changeAudioPlay];
+}
+
 - (void)changeAudioPlay
 {
     //TODO: mp3 format not constant
@@ -93,6 +100,22 @@
 
 }
 
+- (void)changeTitle
+{
+    _titleLable.text = [_songs objectAtIndex:_playSongCount % _songs.count];
+}
+
+- (void)changePlayButtonImage:(BOOL)isPlay
+{
+    if (isPlay) { // 本想根据button的selected来判断，但是当播放完一首音乐时，播放停止，而selected未更新
+        [_playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"pause2"] forState:UIControlStateHighlighted];
+    } else {
+        [_playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [_playButton setImage:[UIImage imageNamed:@"play2"] forState:UIControlStateHighlighted];
+    }
+}
+
 #pragma mark - method
 
 - (void)changePlaySountCount:(NSInteger)itemCount
@@ -105,27 +128,27 @@
 - (IBAction)onPlayOrPauseButtonclicked:(id)sender {
     if (_player.isPlaying) { // 本想根据button的selected来判断，但是当播放完一首音乐时，播放停止，而selected未更新
         [self pause];
-        [_playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-        [_playButton setImage:[UIImage imageNamed:@"play2"] forState:UIControlStateHighlighted];
     } else {
         [self play];
-        [_playButton setImage:[UIImage imageNamed:@"pause"] forState:UIControlStateNormal];
-        [_playButton setImage:[UIImage imageNamed:@"pause2"] forState:UIControlStateHighlighted];
     }
+    [self changePlayButtonImage:_player.isPlaying];
+
     IDZTrace();
 }
 
 - (IBAction)onNextButtonClicked:(id)sender {
     [self changePlaySountCount:1];
-    [self changeAudioPlay];
+    [self changeAudioAndTitle];
     [self play];
+    [self changePlayButtonImage:_player.isPlaying];
 //    _player.url = [[NSBundle mainBundle] URLForResource:song withExtension:@"mp3"];
 }
 
 - (IBAction)onPreviousButtonClicked:(id)sender {
     [self changePlaySountCount:-1];
-    [self changeAudioPlay];
+    [self changeAudioAndTitle];
     [self play];
+    [self changePlayButtonImage:_player.isPlaying];
 }
 
 - (IBAction)onCircleButtonClicked:(id)sender {
@@ -156,8 +179,9 @@
 {
     _circleButtonClickCount = indexPath.row;
     _playSongCount = _circleButtonClickCount;
-    [self changeAudioPlay];
+    [self changeAudioAndTitle];
     [self play];
+    [self changePlayButtonImage:_player.isPlaying];
 }
 
 #pragma mark - Display Update
@@ -209,7 +233,7 @@
     }
     [self stopTimer];
     [self updateDisplay];
-    [self changeAudioPlay];
+    [self changeAudioAndTitle];
     [self play];
 }
 

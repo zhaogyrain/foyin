@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) NSMutableArray *songs;
 @property (weak, nonatomic) IBOutlet UITableView *songTableVIew;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @property (nonatomic, weak) id<PlayListViewControllerDelegate> delegate;
 
