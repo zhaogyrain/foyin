@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface MorningNightWorkViewController : UIViewController
+@interface MorningNightWorkViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, AVAudioPlayerDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *lessonTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 @end

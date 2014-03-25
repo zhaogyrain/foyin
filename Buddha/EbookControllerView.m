@@ -11,6 +11,8 @@
 
 @interface EbookControllerView ()
 
+@property (nonatomic, assign) BOOL tabbarHiddenStatus;
+
 @end
 
 @implementation EbookControllerView
@@ -37,15 +39,35 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    _tabbarHiddenStatus = self.tabBarController.tabBar.isHidden;
+    self.tabBarController.tabBar.hidden = YES;
+    
     self.title = _ebookTitle;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"佛说阿弥陀经" ofType:@"txt"];
+    if (_ebookFileName.length == 0) {
+        _ebookFileName = @"佛说阿弥陀经";
+    }
+    NSString *path = [[NSBundle mainBundle] pathForResource:_ebookFileName ofType:@"txt"];
     NSString* string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-    NSInteger height = CGRectGetHeight(self.view.frame) - self.tabBarController.tabBar.frame.size.height;
-    CGRect rect = CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMinY(self.view.frame) + 20, CGRectGetWidth(self.view.frame), height - self.navigationController.navigationBar.frame.size.height);
+    NSInteger height = CGRectGetHeight(self.view.frame);// - self.tabBarController.tabBar.frame.size.height;
+    CGRect rect = CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMinY(self.view.frame) + 20, CGRectGetWidth(self.view.frame), height - self.navigationController.navigationBar.frame.size.height + 20);
     verticalTextView *vText = [[verticalTextView alloc] initWithFrame:rect withString:string];
     
     [self.view addSubview:vText];
     [self performSelector:@selector(hiddenNavigationBar:) withObject:[NSNumber numberWithBool:!self.navigationController.navigationBar.isHidden] afterDelay:.3];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.tabBarController.tabBar.hidden = _tabbarHiddenStatus;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+//    po self.tabBarController
+//    nil
+//    self.tabBarController.tabBar.hidden = _tabbarHiddenStatus;
 }
 
 - (void)hiddenNavigationBar:(NSNumber *)hidden

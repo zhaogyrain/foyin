@@ -11,5 +11,6 @@
 @interface EbookControllerView : UIViewController
 
 @property (nonatomic, strong) NSString *ebookTitle;
+@property (nonatomic, strong) NSString *ebookFileName;
 
 @end
