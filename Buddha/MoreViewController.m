@@ -26,6 +26,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -73,9 +79,37 @@
     sum += indexPath.row;
     NSLog(@"sum is %d str is %@", sum, [_settingTexts objectAtIndex:sum]);
     
-    WebViewController *ebookCv = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
-    [self presentViewController:ebookCv animated:YES completion:^{
-    }];
+    switch (sum) {
+        case 0:
+        {
+            WebViewController *webViewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+            [self.navigationController pushViewController:webViewVC animated:YES];
+            webViewVC.title = [_settingTexts objectAtIndex:sum];
+        }
+            break;
+         case 4:
+        {
+            // http://blog.csdn.net/yhawaii/article/details/7587355
+//            NSString *stringURL = @"mailto:test@example.com";
+//            NSURL *url = [NSURL URLWithString:stringURL];
+//            [[UIApplication sharedApplication] openURL:url];
+//            You can also provide more information, for a customized subject and body texts:
+            NSString *subject = @"意见反馈";
+            NSString *body = @"";
+            NSString *address = @"zhaogyrain@gmail.com";
+//            NSString *cc = @"test2@akosma.com";
+            NSString *path = [NSString stringWithFormat:@"mailto:%@?subject=%@&body=%@", address, subject, body];
+            NSURL *url = [NSURL URLWithString:[path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            if (![[UIApplication sharedApplication] openURL:url]) {
+                UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"请在设置中登录您的邮箱账户" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"OK") otherButtonTitles:nil];
+                [alertView show];
+
+            }
+        }
+            
+        default:
+            break;
+    }
 }
 
 

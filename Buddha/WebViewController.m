@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
     // Do any additional setup after loading the view.
 }
 
@@ -39,7 +40,7 @@
 {
     [super viewWillAppear:animated];
     
-    self.webview = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.webview = [[UIWebView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMinY(self.view.frame) + self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))];
     self.webview.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.webview.delegate = self;
     [self.view addSubview:self.webview];
