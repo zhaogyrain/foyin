@@ -57,6 +57,7 @@
 		43302FAD18DDD2A100552735 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43302FAB18DDD2A100552735 /* back@2x.png */; };
 		43302FB018DDD2CF00552735 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 43302FAE18DDD2CF00552735 /* back2.png */; };
 		43302FB118DDD2CF00552735 /* back2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 43302FAF18DDD2CF00552735 /* back2@2x.png */; };
+		437441B918EA36AD0072A1DE /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 437441B818EA36AD0072A1DE /* WebViewController.m */; };
 		439E13F218C8C8E7006C9293 /* EbookControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439E13F118C8C8E7006C9293 /* EbookControllerView.m */; };
 		439E13F518C8C91C006C9293 /* verticalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 439E13F418C8C91C006C9293 /* verticalTextView.m */; };
 		439E13F818C8C9A3006C9293 /* 佛说阿弥陀经.txt in Resources */ = {isa = PBXBuildFile; fileRef = 439E13F718C8C9A3006C9293 /* 佛说阿弥陀经.txt */; };
@@ -150,6 +151,8 @@
 		43302FAB18DDD2A100552735 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		43302FAE18DDD2CF00552735 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		43302FAF18DDD2CF00552735 /* back2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back2@2x.png"; sourceTree = "<group>"; };
+		437441B718EA36AD0072A1DE /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		437441B818EA36AD0072A1DE /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		439E13F018C8C8E7006C9293 /* EbookControllerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EbookControllerView.h; sourceTree = "<group>"; };
 		439E13F118C8C8E7006C9293 /* EbookControllerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EbookControllerView.m; sourceTree = "<group>"; };
 		439E13F318C8C91C006C9293 /* verticalTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = verticalTextView.h; sourceTree = "<group>"; };
@@ -344,6 +347,8 @@
 				439E13F118C8C8E7006C9293 /* EbookControllerView.m */,
 				43302FA318DDD01D00552735 /* DeviceInformation.h */,
 				43302FA418DDD01D00552735 /* DeviceInformation.m */,
+				437441B718EA36AD0072A1DE /* WebViewController.h */,
+				437441B818EA36AD0072A1DE /* WebViewController.m */,
 			);
 			path = Buddha;
 			sourceTree = "<group>";
@@ -553,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A2875418B9CBBF00683AFC /* MorningNightWorkViewController.m in Sources */,
+				437441B918EA36AD0072A1DE /* WebViewController.m in Sources */,
 				43A286E418B9C63900683AFC /* SecondViewController.m in Sources */,
 				43A286D818B9C63900683AFC /* AppDelegate.m in Sources */,
 				439E13F518C8C91C006C9293 /* verticalTextView.m in Sources */,
